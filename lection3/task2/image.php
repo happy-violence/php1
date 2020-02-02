@@ -1,6 +1,6 @@
 <?php
 
-$images = [1 => 'sun.jpg', 2 => 'walley.jpg', 3 => 'winter.jpg'];
+$images = [1 => 'sun.jpg', 2 => 'valley.jpg', 3 => 'winter.jpg'];
 
 $id = $_GET['id'];
 ?>

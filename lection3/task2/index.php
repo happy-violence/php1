@@ -1,5 +1,6 @@
 <?php
-$images = [1 => 'sun.jpg', 2 => 'walley.jpg', 3 => 'winter.jpg'];
+$images = [1 => 'sun.jpg', 2 => 'valley.jpg', 3 => 'winter.jpg'];
+
 ?>
 
 <html>
@@ -8,15 +9,12 @@ $images = [1 => 'sun.jpg', 2 => 'walley.jpg', 3 => 'winter.jpg'];
 </head>
 <body>
     <form>
-        <a href="/image.php?id=1">
-            <img width="30%" src="/sun.jpg">
-        </a>
-        <a href="/image.php?id=2">
-            <img width="30%" src="/walley.jpg">
-        </a>
-        <a href="/image.php?id=3">
-            <img width="30%" src="/winter.jpg">
-        </a>
+        <?php
+        foreach ($images as $id => $image) { ?>
+            <a href="/image.php?id=<?= $id ?>">
+                <img width="30%" src="<?= $image ?>">
+            </a>
+        <?php } ?>
     </form>
 </body>
 </html>
