@@ -25,12 +25,14 @@ class TextFile
     public function append($text)
     {
         $this->data[] = $text . PHP_EOL;
+        //return $this нужно для создания цепочки вызовов метода
+        return $this;
     }
 
     //Метод save() сохраняет массив в файл
     public function save()
     {
-        file_put_contents($this->path, $this->data);
+        return file_put_contents($this->path, $this->data);
     }
 }
 
@@ -71,3 +73,4 @@ class Uploader
         return $_FILES[$this->name]['type'];
     }
 }
+
