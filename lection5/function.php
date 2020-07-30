@@ -40,7 +40,7 @@ function getCurrentUser()
 }
 
 //функция для получения имен картинок
-function getNamesImages()
+function getNamesImages() :array
 {
     //ненужный массив
     $wasteArray = ['.', '..'];
