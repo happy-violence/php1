@@ -30,19 +30,18 @@ function checkPassword($login, $password)
 //возвращает либо имя вошедшего на сайт пользователя, либо null
 function getCurrentUser()
 {
-    //если значение куки с ключом 'username' не нулевое
-    //то функция вернет это значение
-    if (isset($_COOKIE['username'])) {
+    //если значение куки с ключом 'username' не нулевое и существует пользователь с заданным логином
+    //то функция вернет логин, установленный в куке
+    if (isset($_COOKIE['username']) && existsUser($_COOKIE['username'])) {
         return $_COOKIE['username'];
     }
-
     return null;
 }
 
 //функция для получения имен картинок
 function getNamesImages() :array
 {
-    //ненужный массив
+    //ненужный массив из имен директорий
     $wasteArray = ['.', '..'];
     //массив имен файлов и каталогов, расположенных в папке images
     $allFiles = scandir(__DIR__ . '/images');
