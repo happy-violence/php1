@@ -1,5 +1,11 @@
 <?php
 
+require_once (__DIR__ . '/function.php');
+
+if (empty(getCurrentUser())) {
+    header("Location: http://localhost:8000/");
+    exit;
+}
 //если массив не пустой
 if (!empty($_FILES)) {
     //и если в массиве у ключа myimage есть значение, отличное от null
