@@ -2,7 +2,7 @@
 require_once (__DIR__ . '/function.php');
 
 // ЕСЛИ пользователь уже вошел (см. пункт 2), ТО редирект на главную страницу
-// если значение, возвращаемое фунцией, не null, то совершаем переадресацию
+// если значение, возвращаемое функцией, не null, то совершаем переадресацию
 if (!empty(getCurrentUser())) {
     header("Location: http://localhost:8000/");
 }
@@ -18,6 +18,6 @@ else {?>
 // ЕСЛИ введены данные в форму входа - проверяем их (см. пункт 1.3) и ЕСЛИ проверка прошла,
 // ТО запоминаем информацию о вошедшем пользователе
 if (!empty($_POST['login']) && !empty($_POST['pwd']) && checkPassword($_POST['login'], $_POST['pwd'])) {
-    setcookie('username', $_POST['login'], '0', '/');
+    setcookie('username', $_POST['login'], 0, '/');
     header("Location: http://localhost:8000/");
 }
