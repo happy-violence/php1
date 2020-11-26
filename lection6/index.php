@@ -5,7 +5,7 @@ require_once __DIR__. '/function.php';
 
 <!doctype html>
 <html>
-<form action="/dataForImage.php" method="post" enctype="multipart/form-data">
+<form action="/addNewFile.php" method="post" enctype="multipart/form-data">
     <input type="file" name="myimage">
     <button type="submit">Вперед!</button>
 </form>
