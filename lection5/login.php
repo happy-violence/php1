@@ -5,6 +5,7 @@ require_once (__DIR__ . '/function.php');
 // если значение, возвращаемое функцией, не null, то совершаем переадресацию
 if (!empty(getCurrentUser())) {
     header("Location: http://localhost:8000/");
+    exit;
 }
 //ЕСЛИ пользователь не вошел - отображает форму входа
 else {?>
